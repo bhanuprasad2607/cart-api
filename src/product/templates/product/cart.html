@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block content %}
+{% if cart %}
+<ul>
+    <p>Click on Product to delete from cart...</p>
+    {% for item in cart %}
+    <li><a href="{% url 'del_product_cart' item.cart_id %}">{{item.product_id}}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>you have no products added into cart</p>
+{% endif %}
+{% endblock %}

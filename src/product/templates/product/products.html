@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block content %}
+{% for product in products %}
+<fieldset>
+    <p>{{ product }} <a href="{% url 'delete_product' product.product_id %}">Delete</a>&nbsp;<a
+            href="{% url 'add_cart' product.product_id %}">add cart</a></p>
+</fieldset>
+{% endfor %}
+{% endblock content %}
